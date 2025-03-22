@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'q3';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -177,7 +179,6 @@
 <li class="toctree-l1"><a class="reference internal" href="q1.html">Question 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="q2.html">Question 2</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Question 3</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="q4.html">Question 4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="q5.html">Question 5</a></li>
 </ul>
@@ -328,10 +329,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Question 3</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question">Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question">Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -344,13 +344,18 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="question-3">
 <h1>Question 3<a class="headerlink" href="#question-3" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="question">
-<h1>Question<a class="headerlink" href="#question" title="Link to this heading">#</a></h1>
+<section id="question">
+<h2>Question<a class="headerlink" href="#question" title="Link to this heading">#</a></h2>
 <p>Six UK cities are connected by a rail network such that there is a direct rail line connecting each pair of cities.</p>
 <p>On Sundays, some lines may be closed for repair. Any city must be accessible by rail from any other (not necessarily directly) at all times.</p>
 <p>Subject to this condition, in how many different ways can some of the lines be closed?</p>
 <p>Please also demonstrate your solution.</p>
+</section>
+<section id="solution">
+<h2>Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<p>We can use graph theory here, and model the rail network as the complete graph with 6 vertices <span class="math notranslate nohighlight">\(K_6\)</span>.</p>
+<p><img alt="image" src="https://github.com/user-attachments/assets/956023d9-5404-4187-b44c-a918c30fed74" /></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -417,10 +422,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Question 3</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#question">Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question">Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
