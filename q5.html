@@ -327,7 +327,10 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem">Problem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reframing-the-problem">Reframing the problem</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -354,16 +357,28 @@ document.write(`
 </section>
 <section id="solution">
 <h2>Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<section id="reframing-the-problem">
+<h3>Reframing the problem<a class="headerlink" href="#reframing-the-problem" title="Link to this heading">#</a></h3>
+<p>This problem is most easily understood by reframing it in two ways:</p>
+<p>Firstly, the final line of the problem needs us to consider the questions:</p>
+<ul class="simple">
+<li><p>What is the minimum number of pairs Lily can achieve, assuming Ben plays to minimise her score?</p></li>
+<li><p>What is the maximum number of pairs Lily can achieve, assuming Ben plays to maximise her score?</p></li>
+</ul>
+<p>Secondly, the problem is more easily visualised when the pairs of numbers are placed into a square grid, with A denoting the row of the grid and B denoting the column.</p>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/27c88ace-092d-40a2-a97c-43d5b7156227"
-    style="width: 50%;" />
+    style="width: 70%;" />
   <p>The complete graph with 6 vertices</p>
 </div>
+<p>It is easy to see that in each turn Lily must take pairs from two cells that are horizontally or vertically adjacent.</p>
+<p>To expand on this, we will colour the cells black if the sum of A and B is odd, leaving them white otherwise.</p>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/6c9ad653-6308-4311-b0de-8466b11978d6"
-    style="width: 50%;" />
+    style="width: 70%;" />
   <p>The complete graph with 6 vertices</p>
 </div>
+</section>
 </section>
 </section>
 
@@ -423,7 +438,10 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem">Problem</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reframing-the-problem">Reframing the problem</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
