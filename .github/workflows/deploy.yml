@@ -1,30 +1,37 @@
-name: Deploy Jupyter Book
+name: Build and Deploy Jupyter Book
 
 on:
   push:
     branches:
-      - main  # Replace with your default branch if not `main`
+      - main  # Replace `main` with your default branch if needed
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
+
     steps:
+      # Step 1: Check out the repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Step 2: Set up Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.8'
+          python-version: '3.9'
 
+      # Step 3: Install Jupyter Book
       - name: Install Jupyter Book
         run: pip install jupyter-book
 
+      # Step 4: Build the Jupyter Book
       - name: Build Jupyter Book
         run: jupyter-book build .
 
+      # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: _build/html
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Use the provided GitHub token
+          publish_dir: _build/html                  # Directory containing the built book
+          destination_dir: ''                       # Optional: leave blank to publish the root
