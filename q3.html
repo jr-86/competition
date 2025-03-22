@@ -575,12 +575,18 @@ document.write(`
 </div>
 <p>For subgraphs with %6&lt;=e&lt;=9$ edges, the mathematics becomes complex, so we will adopt a programmatic approach instead.</p>
 <p>This approach could have been taken earlier, but the above table will help verify the validity of our results.</p>
-<p>The following script will</p>
+<p>The following script will:</p>
 <ul class="simple">
 <li><p>Generate the vertices as integers 1-6</p></li>
 <li><p>Generate the edges as each possible pair of vertices</p></li>
 <li><p>Generate each subgraph as every possible combination of vertices</p></li>
-<li><p>Loop through each subgraph, noting its size and using an algorithm to determine which nodes it connects</p></li>
+<li><p>Loop through each subgraph to:</p>
+<ul>
+<li><p>Record its size (number of edges)</p></li>
+<li><p>Determine how many vertices it connects with an algorithm</p></li>
+<li><p>Classify it as connected or disconnected based on the number of vertices it connects</p></li>
+</ul>
+</li>
 <li><p>Print the results</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
