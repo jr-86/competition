@@ -353,8 +353,8 @@ document.write(`
 </section>
 <section id="solution">
 <h2>Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
-<p>We can use graph theory here, and model the rail network as the complete graph with 6 vertices <span class="math notranslate nohighlight">\(K_6\)</span> representing stations, connected by edges representing railway lines.</p>
-<p>The number of ways of closing the lines will be one less than the number of subgraphs of <span class="math notranslate nohighlight">\(K_6\)</span> that connect all nodes, as one subgraph is <span class="math notranslate nohighlight">\(K_6\)</span> itself, which doesn’t involve closing any railway lines.</p>
+<p>We can use graph theory here, and model the rail network as the complete graph <span class="math notranslate nohighlight">\(K_6\)</span>, with with 6 vertices representing stations, connected by edges representing railway lines.</p>
+<p>The number of ways of closing the lines will be one less than the number of subgraphs of <span class="math notranslate nohighlight">\(K_6\)</span> that connect all nodes (connected subgraphs), as one subgraph is <span class="math notranslate nohighlight">\(K_6\)</span> itself, which doesn’t involve closing any railway lines.</p>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/956023d9-5404-4187-b44c-a918c30fed74" alt="Image description" style="width: 50%;" />
   <p>$K_6$</p>
