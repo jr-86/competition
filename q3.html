@@ -354,14 +354,426 @@ document.write(`
 <section id="solution">
 <h2>Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
 <p>We can use graph theory here, and model the rail network as the complete graph with 6 vertices <span class="math notranslate nohighlight">\(K_6\)</span> representing stations, connected by edges representing railway lines.</p>
-<p>The number of ways of closing the lines will be one less than the number of subgraphs of <span class="math notranslate nohighlight">\(K_6\)</span> that connect all nodes, as one subgraph is <span class="math notranslate nohighlight">\(K_6\)</span> itself, which doesn’t involve closing any lines.</p>
+<p>The number of ways of closing the lines will be one less than the number of subgraphs of <span class="math notranslate nohighlight">\(K_6\)</span> that connect all nodes, as one subgraph is <span class="math notranslate nohighlight">\(K_6\)</span> itself, which doesn’t involve closing any railway lines.</p>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/956023d9-5404-4187-b44c-a918c30fed74" alt="Image description" style="width: 50%;" />
   <p>$K_6$</p>
 </div>
 <p>Each edge of this graph connects 2 vertices, so there are <span class="math notranslate nohighlight">\(\binom{6}{2} = 15\)</span> edges.</p>
-<p>Thus the total number of subgraphs to consider is <span class="math notranslate nohighlight">\(2^(15)\)</span>.</p>
+<p>Thus the total number of subgraphs to consider is <span class="math notranslate nohighlight">\(2^{15} = 36728\)</span>.</p>
 <p>These can be grouped by the number of edges they contain, the number of each given by <span class="math notranslate nohighlight">\(\binom{15}{e}\)</span> for a graph of <span class="math notranslate nohighlight">\(e\)</span> edges.</p>
+<p>We want to complete the following table with numbers of connected and disconnected graphs for each number of edges, and total the connected subgraphs.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Number of Edges in Subgraph</p></th>
+<th class="head"><p>Connected</p></th>
+<th class="head"><p>Disconnected</p></th>
+<th class="head"><p>Total</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>105</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>455</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>1365</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>3003</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>5005</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>6435</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>6435</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>5005</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>3003</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>1365</p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>455</p></td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>105</p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>—————————–</p></td>
+<td><p>———–</p></td>
+<td><p>————–</p></td>
+<td><p>——–</p></td>
+</tr>
+<tr class="row-odd"><td><p>Total</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>32768</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Considering the simpler cases with subgraphs containing <span class="math notranslate nohighlight">\(e\)</span> edges:</p>
+<p>For <span class="math notranslate nohighlight">\(e &lt; 5\)</span> , all subgraphs are disconnected. You need 5 edges to connect 6 vertices.</p>
+<p>For <span class="math notranslate nohighlight">\(e &gt; 10\)</span>, all subgraphs are connected. This equates to removeing fewer than 5 edges, and 5 edges must be removed to disconnect a vertex.</p>
+<p>For <span class="math notranslate nohighlight">\(e = 10\)</span>, 6 subgraphs will be disconnected. These are the 6 subgraphs where the 5 missing edges all connect to one vertex.</p>
+<p>For <span class="math notranslate nohighlight">\(e = 5\)</span>, each connected subgraph must be a tree, there aren’t enough edges to include cycles. The number of spanning trees on a complete graph of <span class="math notranslate nohighlight">\(n\)</span> vertices is given by Cayley’s Formula <span class="math notranslate nohighlight">\(n^{n-2}\)</span>. <span class="math notranslate nohighlight">\(6^4 = 1296\)</span> subgraphs are connected.</p>
+<p>We can update the table as follows:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Number of Edges in Subgraph</p></th>
+<th class="head"><p>Connected</p></th>
+<th class="head"><p>Disconnected</p></th>
+<th class="head"><p>Total</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>15</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>105</p></td>
+<td><p>105</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>455</p></td>
+<td><p>455</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>0</p></td>
+<td><p>1365</p></td>
+<td><p>1365</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>1296</p></td>
+<td><p>1707</p></td>
+<td><p>3003</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>5005</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>6435</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>6435</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>5005</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>2997</p></td>
+<td><p>6</p></td>
+<td><p>3003</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>1365</p></td>
+<td><p>0</p></td>
+<td><p>1365</p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p>455</p></td>
+<td><p>0</p></td>
+<td><p>455</p></td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p>105</p></td>
+<td><p>0</p></td>
+<td><p>105</p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p>15</p></td>
+<td><p>0</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>—————————–</p></td>
+<td><p>———–</p></td>
+<td><p>—————</p></td>
+<td><p>——–</p></td>
+</tr>
+<tr class="row-odd"><td><p>Total</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>32768</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>For subgraphs with %6&lt;=e&lt;=9$ edges, the mathematics becomes complex, so we will adopt a programmatic approach instead.</p>
+<p>This approach could have been taken earlier, but the above table will help verify the validity of our results.</p>
+<p>The following script will</p>
+<ul class="simple">
+<li><p>Generate the vertices as integers 1-6</p></li>
+<li><p>Generate the edges as each possible pair of vertices</p></li>
+<li><p>Generate each subgraph as every possible combination of vertices</p></li>
+<li><p>Loop through each subgraph, noting its size and using an algorithm to determine which nodes it connects</p></li>
+<li><p>Print the results</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">expand_vertices</span><span class="p">(</span><span class="n">edge_combinations</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Expands a list of edge combinations to determine all the vertices that are connected</span>
+<span class="sd">    by the given edges in a graph. Loops through the vertices. Terminates when no new vertices </span>
+<span class="sd">    can be added.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    ----------</span>
+<span class="sd">        edge_combinations (list):</span>
+<span class="sd">            A list of lists, where each inner list has 2 integer elements and represents an edge</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    --------</span>
+<span class="sd">        vertices (list):</span>
+<span class="sd">            A sorted list of vertices that are connected through the provided edges.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">vertices</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># Store the vertices from the first edge</span>
+    <span class="n">vertices</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">edge_combinations</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># Track if any vertex was added in a given pass</span>
+    <span class="n">added_in_pass</span> <span class="o">=</span> <span class="kc">True</span>
+
+    <span class="c1"># Loop until no new vertex is added</span>
+    <span class="k">while</span> <span class="n">added_in_pass</span><span class="p">:</span>
+        <span class="n">added_in_pass</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">edge_combinations</span><span class="p">:</span>
+            <span class="c1"># If either vertex of the edge is already in the vertices list, add the other vertex</span>
+            <span class="k">if</span> <span class="n">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">in</span> <span class="n">vertices</span> <span class="ow">or</span> <span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">vertices</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">vertices</span><span class="p">:</span>
+                    <span class="n">vertices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                    <span class="n">added_in_pass</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">if</span> <span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">vertices</span><span class="p">:</span>
+                    <span class="n">vertices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">edge</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                    <span class="n">added_in_pass</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">vertices</span>
+
+
+<span class="c1"># Create the list of edges (combinations of 2 vertices from 1 to 6)</span>
+<span class="n">edges_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># Generate every possible distinct set of edges (subgraphs) formed from edges_list</span>
+<span class="n">subgraph_combinations</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">edges_list</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># Convert each combination from tuple to list</span>
+    <span class="n">subgraph_combinations</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="nb">list</span><span class="p">(</span><span class="n">comb</span><span class="p">)</span>
+                                  <span class="k">for</span> <span class="n">comb</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">(</span><span class="n">edges_list</span><span class="p">,</span> <span class="n">r</span><span class="p">)])</span>
+
+<span class="c1"># Create a table to store results for each subgraph size (1 to 15 edges)</span>
+<span class="n">table</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">total_true</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">total_false</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Loop through each subgraph combination, storing size and result</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">):</span>  <span class="c1"># For every subgraph size (number of edges) from 1 to 15</span>
+    <span class="n">true_count</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Count connected subgraphs</span>
+    <span class="n">false_count</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Count disconnected subgraphs</span>
+
+    <span class="k">for</span> <span class="n">subgraph</span> <span class="ow">in</span> <span class="n">subgraph_combinations</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">subgraph</span><span class="p">)</span> <span class="o">==</span> <span class="n">i</span><span class="p">:</span>
+            <span class="c1"># For each subgraph, check which vertices are connected by its edges</span>
+            <span class="n">connected_vertices</span> <span class="o">=</span> <span class="n">expand_vertices</span><span class="p">(</span><span class="n">subgraph</span><span class="p">)</span>
+            <span class="c1"># If all vertices from 1 to 6 are connected (i.e., the graph is fully connected)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">connected_vertices</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
+                <span class="n">true_count</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">false_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># Store subgraph size, true count (connected), and false count (disconnected)</span>
+    <span class="n">table</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">true_count</span><span class="p">,</span> <span class="n">false_count</span><span class="p">))</span>
+    <span class="n">total_true</span> <span class="o">+=</span> <span class="n">true_count</span>
+    <span class="n">total_false</span> <span class="o">+=</span> <span class="n">false_count</span>
+
+<span class="c1"># Print the results in a table</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of Edges in Subgraph | Connected | Disconnected&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------------------------------------------&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">true_count</span><span class="p">,</span> <span class="n">false_count</span> <span class="ow">in</span> <span class="n">table</span><span class="p">:</span>  <span class="c1"># Use r here, not i</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">r</span><span class="si">:</span><span class="s2">&lt;27</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">true_count</span><span class="si">:</span><span class="s2">&lt;9</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">false_count</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------------------------------------------------&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total                       | </span><span class="si">{</span><span class="n">total_true</span><span class="si">:</span><span class="s2">&lt;9</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">total_false</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that the above script does not include the result of the single subgraph with no edges.</p>
+<p>Using the output from the above script, we can complete the above table with the following:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Number of Edges in Subgraph</p></th>
+<th class="head"><p>Connected</p></th>
+<th class="head"><p>Disconnected</p></th>
+<th class="head"><p>Total</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>15</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>0</p></td>
+<td><p>105</p></td>
+<td><p>105</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>0</p></td>
+<td><p>455</p></td>
+<td><p>455</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>0</p></td>
+<td><p>1365</p></td>
+<td><p>1365</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>1296</p></td>
+<td><p>1707</p></td>
+<td><p>3003</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>3660</p></td>
+<td><p>1345</p></td>
+<td><p>5005</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>5700</p></td>
+<td><p>735</p></td>
+<td><p>6435</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>6165</p></td>
+<td><p>270</p></td>
+<td><p>6435</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>4945</p></td>
+<td><p>60</p></td>
+<td><p>5005</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>2997</p></td>
+<td><p>6</p></td>
+<td><p>3003</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>1365</p></td>
+<td><p>0</p></td>
+<td><p>1365</p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p>455</p></td>
+<td><p>0</p></td>
+<td><p>455</p></td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p>105</p></td>
+<td><p>0</p></td>
+<td><p>105</p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p>15</p></td>
+<td><p>0</p></td>
+<td><p>15</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>—————————–</p></td>
+<td><p>———–</p></td>
+<td><p>—————</p></td>
+<td><p>——–</p></td>
+</tr>
+<tr class="row-odd"><td><p>Total</p></td>
+<td><p>26704</p></td>
+<td><p>6064</p></td>
+<td><p>32768</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Therefore, the answer is the total of the connected subgraphs minus the <span class="math notranslate nohighlight">\(e=15\)</span> case where no lines are closed.</p>
+<p>The answer is <code class="docutils literal notranslate"><span class="pre">26703</span></code>.</p>
 </section>
 </section>
 
