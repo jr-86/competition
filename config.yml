@@ -1,0 +1,10 @@
+# Book settings
+title: "My Jupyter Book"  # Title of the book
+author: "Your Name"       # Author's name
+logo: ""                  # Optional: Path to a logo file (e.g., images/logo.png)
+copyright: "2025, Your Name"
+
+# Jupyter Book settings
+language: "en"
+kernels:
+  - python3  # Define the kernel to use for notebooks
