@@ -353,11 +353,15 @@ document.write(`
 </section>
 <section id="solution">
 <h2>Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
-<p>We can use graph theory here, and model the rail network as the complete graph with 6 vertices <span class="math notranslate nohighlight">\(K_6\)</span>.</p>
+<p>We can use graph theory here, and model the rail network as the complete graph with 6 vertices <span class="math notranslate nohighlight">\(K_6\)</span> representing stations, connected by edges representing railway lines.</p>
+<p>The number of ways of closing the lines will be one less than the number of subgraphs of <span class="math notranslate nohighlight">\(K_6\)</span> that connect all nodes, as one subgraph is <span class="math notranslate nohighlight">\(K_6\)</span> itself, which doesn’t involve closing any lines.</p>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/956023d9-5404-4187-b44c-a918c30fed74" alt="Image description" style="width: 50%;" />
   <p>$K_6$</p>
 </div>
+<p>Each edge of this graph connects 2 vertices, so there are <span class="math notranslate nohighlight">\(\binom{6}{2} = 15\)</span> edges.</p>
+<p>Thus the total number of subgraphs to consider is <span class="math notranslate nohighlight">\(2^15\)</span>.</p>
+<p>These can be grouped by the number of edges they contain, the number of each given by <span class="math notranslate nohighlight">\(\binom{15}{e}\)</span> for a graph of <span class="math notranslate nohighlight">\(e\)</span> edges.</p>
 </section>
 </section>
 
