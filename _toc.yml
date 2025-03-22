@@ -1,0 +1,7 @@
+# Table of contents
+format: jb-book
+root: intro  # The landing page for your book (intro.md)
+
+chapters:
+  - file: chapter1  # Chapter 1 (chapter1.md)
+  - file: chapter2  # Chapter 2 (chapter2.ipynb)
