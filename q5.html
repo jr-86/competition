@@ -329,6 +329,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem">Problem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reframing-the-problem">Reframing the problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lily-s-minimum-score">Lily’s minimum score</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ben-s-strategy">Ben’s strategy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lily-s-optimal-response">Lily’s optimal response</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution</a></li>
 </ul>
 </li>
 </ul>
@@ -360,24 +366,79 @@ document.write(`
 <section id="reframing-the-problem">
 <h3>Reframing the problem<a class="headerlink" href="#reframing-the-problem" title="Link to this heading">#</a></h3>
 <p>This problem is most easily understood by reframing it in two ways:</p>
-<p>Firstly, the final line of the problem needs us to consider the questions:</p>
+<p>Firstly, the final line of the problem needs us to consider the question:</p>
 <ul class="simple">
-<li><p>What is the minimum number of pairs Lily can achieve, assuming Ben plays to minimise her score?</p></li>
-<li><p>What is the maximum number of pairs Lily can achieve, assuming Ben plays to maximise her score?</p></li>
+<li><p>What is the maximum number of pairs Lily can achieve, assuming Ben plays to minimise her score?</p></li>
 </ul>
 <p>Secondly, the problem is more easily visualised when the pairs of numbers are placed into a square grid, with A denoting the row of the grid and B denoting the column.</p>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/27c88ace-092d-40a2-a97c-43d5b7156227"
     style="width: 70%;" />
-  <p>The complete graph with 6 vertices</p>
 </div>
 <p>It is easy to see that in each turn Lily must take pairs from two cells that are horizontally or vertically adjacent.</p>
 <p>To expand on this, we will colour the cells black if the sum of A and B is odd, leaving them white otherwise.</p>
 <div align="center">
   <img src="https://github.com/user-attachments/assets/6c9ad653-6308-4311-b0de-8466b11978d6"
     style="width: 70%;" />
-  <p>The complete graph with 6 vertices</p>
 </div>
+<p>The remainder of this solution will refer to these (A,B) pairs grouped as such.</p>
+<ul class="simple">
+<li><p>A pair is ‘white’ if the sum of A and B is even</p></li>
+<li><p>A pair is ‘black’ if the sum of A and B is odd</p></li>
+</ul>
+<p>There are 144 (A,B) pairs in total, with 72 black pairs and 72 white pairs.</p>
+<p>It is clear that Lily must not only pick adjacent pairs - she must also pick one black and one white pair on any given turn.</p>
+</section>
+<section id="lily-s-minimum-score">
+<h3>Lily’s minimum score<a class="headerlink" href="#lily-s-minimum-score" title="Link to this heading">#</a></h3>
+<section id="ben-s-strategy">
+<h4>Ben’s strategy<a class="headerlink" href="#ben-s-strategy" title="Link to this heading">#</a></h4>
+<p>To minimise the number of pairs Lily can take, Ben needs to ensure Lily cannot play a turn as quickly as possible.</p>
+<p>In order to do this, he needs to exhaust the supply of either black or white pairs, because she must take an adjacent black pair and white pair every turn.</p>
+<p>As such, Ben needs to take only black pairs or take only white pairs until there are no more of one colour. It does not matter which.</p>
+<p>If Ben takes white pairs:</p>
+<ul class="simple">
+<li><p>After each player has taken 36 turns:</p>
+<ul>
+<li><p>Ben has taken a white pair 36 times</p></li>
+<li><p>Lily has taken a black pair and a white pair 36 times</p></li>
+</ul>
+</li>
+<li><p>Ben takes a black pair on his 37th turn</p></li>
+<li><p>Lily cannot take her turn</p></li>
+<li><p>The game ends with Ben having 37 pairs and Lily having 72 (36 white, 36 black)</p></li>
+</ul>
+<p>The above argument my be mirrored with identical logic if Ben takes black pairs instead.</p>
+<p>It is not enough to show that Lily may be prevented from taking a turn after 36 turns - we need to ensure she can always take adjacent black and white pairs.</p>
+</section>
+<section id="lily-s-optimal-response">
+<h4>Lily’s optimal response<a class="headerlink" href="#lily-s-optimal-response" title="Link to this heading">#</a></h4>
+<p>In the event of Ben taking only one colour, we must check that there is a strategy Lily can follow to ensure that she can play all 36 turns, to avoid issues with adjacency.</p>
+<p>A simple strategy for this is as follows</p>
+<ul class="simple">
+<li><p>If Ben is taking white pairs:</p></li>
+<li><p>Lily should take a random white pair (A,B)</p>
+<ul>
+<li><p>If A is odd, she should take the black pair (A, B+1) - the pair to the right on the grid</p></li>
+<li><p>IF A is even, she should take the black pair (A, B-1) - the pair to the left on the grid</p></li>
+</ul>
+</li>
+<li><p>If Ben is taking black pairs:</p></li>
+<li><p>Lily should take a random black pair (A,B)</p>
+<ul>
+<li><p>If A is odd, she should take the white pair (A, B-1) - the pair to the left on the grid</p></li>
+<li><p>IF A is even, she should take the white pair (A, B+1) - the pair to the right on the grid</p></li>
+</ul>
+</li>
+</ul>
+<p>The adjacent second pair will always be available as it is unique to the first random (available) pair, and Ben is not taking pairs of that colour.</p>
+<p>Therefore Lily can take all 36 turns when facing Ben’s optimal strategy.</p>
+</section>
+</section>
+<section id="id1">
+<h3>Solution<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Based on the above, Lily can take <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">minimum</span> <span class="pre">of</span> <span class="pre">72</span> <span class="pre">pairs</span></code>, regardless of Ben’s play.</p>
+<p>(It would be trivial to show that they could play co-operatively, giving her 96 pairs after 48 turns.)</p>
 </section>
 </section>
 </section>
@@ -440,6 +501,12 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem">Problem</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reframing-the-problem">Reframing the problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lily-s-minimum-score">Lily’s minimum score</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ben-s-strategy">Ben’s strategy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lily-s-optimal-response">Lily’s optimal response</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Solution</a></li>
 </ul>
 </li>
 </ul>
