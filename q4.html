@@ -425,7 +425,33 @@ s = \frac{a + b + c}{2} = \frac{2\sqrt{18\pi + 10} + \sqrt{72 \pi + 24 \sqrt{5 \
 \[
 \text{Area of} \triangle AFJ = \sqrt{\left( \frac{2\sqrt{18\pi + 10} + \sqrt{72 \pi + 24 \sqrt{5 \pi} + 50} + \sqrt{10}}{2} \right) \left( \frac{2\sqrt{18\pi + 10} + \sqrt{72 \pi + 24 \sqrt{5 \pi} + 50} + \sqrt{10}}{2} - 2\sqrt{18\pi + 10} \right) \left( \frac{2\sqrt{18\pi + 10} + \sqrt{72 \pi + 24 \sqrt{5 \pi} + 50} + \sqrt{10}}{2} - \sqrt{72 \pi + 24 \sqrt{5 \pi} + 50} \right) \left( \frac{2\sqrt{18\pi + 10} + \sqrt{72 \pi + 24 \sqrt{5 \pi} + 50} + \sqrt{10}}{2} - \sqrt{10} \right)}
 \]</div>
-<p>Before resorting to numerical approximations, we will try one final programmatic</p>
+<p><em>My apologies to the reader, I just wanted to see the equation written in full.</em></p>
+<p><em>At this point I would like to note that decades of mathematical experience are telling me to give up on algebra and evaluate this numerically. I would say that the chances of the above formula simplifying nicely are minimal.</em></p>
+<p>Before resorting to numerical approximations, we will try a final programmatic approach to find a simplified version of the above, using the sympy Python package in the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+
+<span class="n">pi</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="c1"># Define a, b, c</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">18</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">+</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">72</span> <span class="o">*</span> <span class="n">pi</span> <span class="o">+</span> <span class="mi">24</span> <span class="o">*</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="n">pi</span><span class="p">)</span> <span class="o">+</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Calculate s</span>
+<span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="c1"># Use Heron&#39;s formula</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">c</span><span class="p">))</span>
+
+<span class="c1"># Simplify the expression for the area</span>
+<span class="n">A_simplified</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+<span class="c1"># Print the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Area = &quot;</span><span class="p">,</span> <span class="n">A_simplified</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The answer is <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p>
+<p><em>That is incredible.</em></p>
 </section>
 </section>
 </section>
