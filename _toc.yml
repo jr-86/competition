@@ -3,7 +3,8 @@ root: intro
 
 chapters:
   - file: q1
-  - file: q2
+  - file: q2a
+  - file: q2b
   - file: q3
   - file: q4
   - file: q5
