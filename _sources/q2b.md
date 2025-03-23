@@ -58,6 +58,6 @@ There is $1$ way to do this.
 
 ### Answer
 
-Thus, the number of ways in which the three teams can be arranged is given by $ 80 \cdot 12\cdot 1 $.
+Thus, the number of ways in which the three teams can be arranged is given by $ 80 \cdot 12 \cdot 1 $
 
 The answer is `960`.
