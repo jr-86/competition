@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'q1';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -349,11 +351,22 @@ document.write(`
 </section>
 <section id="solution">
 <h2>Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
-<p>My first assumption is that “the entire Civil service” refers to all Civil servants, regardless of whether or not they are working that day.</p>
+<p>My first assumption is that “the entire Civil service” refers to all civil servants, regardless of whether or not they are working that day.</p>
 <p>According to the ONS, the number of Civil Servants (by headcount, not FTE) was 542,840 at 31 March 2024. We will assume this number has remained constant.</p>
 <p>According to the ONS again, there were 59,110,688 people aged 12 or over in the United Kingdom in mid-2023. We will assume this number has remained constant, though it has presumably risen slightly in line with population projections. We are considering people 12 or over as it is generally recommended that children younger than that should not drink tea.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{542,840}{59,110,688} \approx 0.009
+\]</div>
+<p>So approximately 0.9% of the 12-and-over population of the UK are civil servants, based on these assumptions.</p>
 <p>According to multiple sources online, approximately 165,000,000 cups of tea are consumed each day in the United Kingdom.</p>
-<p>With the very crude assumption that these are consumed equally by all people</p>
+<p>Making the assumption that the distribution of tea consumption of civil servants is broadly similar to the distribution of the tea consumption of the 12-and-over population of the UK as a whole, it would follow that civil servants consume 0.9% of the 165,000,000 cups of tea consumed each day.</p>
+<div class="math notranslate nohighlight">
+\[
+0.009 \times 165,000,000 = 1,485,000
+\]</div>
+<p>Given the huge assumptions involved in both data and methodology, this can be rounded to a more digestible <span class="math notranslate nohighlight">\(1,500,000\)</span> without significant loss of accuracy.</p>
+<p>My estimate is <code class="docutils literal notranslate"><span class="pre">1.5</span> <span class="pre">million</span></code>.</p>
 </section>
 </section>
 
