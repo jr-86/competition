@@ -18,7 +18,7 @@ Let's call the other team Team 3.
 
 ### Filling Team 1
 
-We have three open spots on Team 1 and 5 pairs of twins to choose from.
+Dave is already on Team 1, so we have three open spots on Team 1 and 5 pairs of twins to choose from.
 
 The first spot may be filled by any of the 10. This takes one member, and excludes their twin from joining Team 1.
 
@@ -26,7 +26,7 @@ Thus, there are 8 choices for the second open spot. Again, this takes a member, 
 
 So there are 6 choices for the third open spot.
 
-Thus, there are $ 10 \cdot 8 \cdot 6 $ ways to pick the three other members of Team 1.
+Therefore, there are $ 10 \cdot 8 \cdot 6 $ ways to pick the three other members of Team 1.
 
 However, we needed to consider that these "ways to pick" are counting every order in which the participants can be picked - this is a permutation.
 
@@ -40,9 +40,9 @@ $$
 
 ### Filling Team 2
 
-With Team 1 filled, we have three open spots to fill on Team 2.
+With Team 1 filled, and Bob already on Team 2, we have three open spots to fill.
 
-Two of his teammates must be from pairs of twins not selected for Team 1, to avoid them being forced into Team 3 together. There are $2 \cdot 2$ ways of choosing them, as order does not matter.
+Two of Bob's teammates must be from pairs of twins not selected for Team 1, to avoid them being forced into Team 3 together. There are $2 \cdot 2$ ways of choosing them, as order does not matter.
 
 The final teammate must then be the twin of one of the three put into Team 1 alongside Dave. So the number of ways Team 2 may be filled is
 
