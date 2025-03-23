@@ -368,17 +368,22 @@ document.write(`
   <img src="https://github.com/user-attachments/assets/ce47fb41-0d32-49fb-9f1e-937c6320698e"
     style="width: 50%;" />
 </div>
-<p>The vertices of the triangle are <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(F\)</span> and <span class="math notranslate nohighlight">\(J\)</span>.</p>
+<p>We are looking for the area of <span class="math notranslate nohighlight">\(\triangle AFJ\)</span>.</p>
 <p>We will find the lengths of <span class="math notranslate nohighlight">\(\overline{AF}\)</span>, <span class="math notranslate nohighlight">\(\overline{AJ}\)</span>, <span class="math notranslate nohighlight">\(\overline{FJ}\)</span>, and apply Heron’s formula to find the area of the triangle.</p>
 </section>
 <section id="finding-the-side-lengths">
 <h3>Finding the side lengths<a class="headerlink" href="#finding-the-side-lengths" title="Link to this heading">#</a></h3>
-<p>We’ll start by finding the lengths of the line segments that compose the squares.</p>
+<p>We’ll start by finding the lengths of the line segments that compose the squares:</p>
 <p>Area of <span class="math notranslate nohighlight">\(\square ABCE = 36 \pi \implies \overline{AB} = \overline{AC} = \overline{CE} = \overline{BE} = 6 \sqrt{ \pi }\)</span></p>
 <p>Area of <span class="math notranslate nohighlight">\(\square GHJK = 5 \implies \overline{GH} = \overline{GJ} = \overline{GK} = \overline{HK} = \sqrt{ 5 }\)</span></p>
 <p><span class="math notranslate nohighlight">\(\overline{GJ}\)</span> is also a side of <span class="math notranslate nohighlight">\(\square FGIJ \implies \overline{GH} = \overline{GJ} = \overline{GK} = \sqrt{ 5 }\)</span></p>
 <p><span class="math notranslate nohighlight">\(\overline{FH} = \overline{FG} + \overline{GH} = 2 \sqrt{ 5 } \implies \overline{DE} = \overline{DF} = \overline{EH} = 2 \sqrt{ 5 }\)</span></p>
-<p>And then</p>
+<p>And then find certain useful lengths involving points <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(M\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\overline{AL} = \overline{AB} - \overline{BL} = \overline{AB} - \overline{DE} = 6 \sqrt{ \pi } - 2 \sqrt{ 5 }\)</span></p>
+<p><span class="math notranslate nohighlight">\(\overline{AM} = \overline{AB} - \overline{BM} = \overline{AB} - \overline{GH} = 6 \sqrt{ \pi } - \sqrt{ 5 }\)</span></p>
+<p><span class="math notranslate nohighlight">\(\overline{LF} = \overline{LD} + \overline{DF} = \overline{BE} + \overline{EH} = 6 \sqrt{ \pi } + 2 \sqrt{ 5 }\)</span></p>
+<p><span class="math notranslate nohighlight">\(\overline{MJ} = \overline{BK} = \overline{BE} + \overline{EH} + \overline{HK} = 6 \sqrt{ \pi } + 2 \sqrt{ 5 } + \sqrt{ 5 } = 6 \sqrt{ \pi } + 3 \sqrt{ 5 }\)</span></p>
+<p>These will allow us to find the side lengths of</p>
 </section>
 </section>
 </section>
