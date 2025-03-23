@@ -42,7 +42,7 @@ $$
 
 With Team 1 filled, and Bob already on Team 2, we have three open spots to fill.
 
-Two of Bob's teammates must be from pairs of twins not selected for Team 1, to avoid them being forced into Team 3 together. There are $2 \cdot 2$ ways of choosing them, as order does not matter.
+Two of Bob's teammates must be one participant each from the two pairs of twins not selected for Team 1, to avoid them being forced into Team 3 together. There are $2 \cdot 2$ ways of choosing them, as order does not matter.
 
 The final teammate must then be the twin of one of the three put into Team 1 alongside Dave. So the number of ways Team 2 may be filled is
 
