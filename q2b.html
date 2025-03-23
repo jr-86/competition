@@ -357,20 +357,20 @@ document.write(`
 </section>
 <section id="solution">
 <h2>Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
-<p>We’ll start by calling one pair of twins A1 and A2.</p>
-<p>A1 must be on a team. We’ll call that Team 1.</p>
-<p>A2 must be on a team. We’ll call that Team 2.</p>
+<p>We’ll start by calling one pair of twins Dave and Bob.</p>
+<p>Dave must be on a team. We’ll call that Team 1.</p>
+<p>Bob must be on a team. We’ll call that Team 2.</p>
 <p>Let’s call the other team Team 3.</p>
 <section id="filling-team-1">
 <h3>Filling Team 1<a class="headerlink" href="#filling-team-1" title="Link to this heading">#</a></h3>
 <p>We have three open spots on Team 1 and 5 pairs of twins to choose from.</p>
-<p>The first spot may be filled by any of the 10. This takes one member, and excludes their twin from joining team 1.</p>
-<p>Thus, there are 8 choices for the second open spot. Again, this takes a member, and excludes their twin from joining team 1.</p>
+<p>The first spot may be filled by any of the 10. This takes one member, and excludes their twin from joining Team 1.</p>
+<p>Thus, there are 8 choices for the second open spot. Again, this takes a member, and excludes their twin from joining Team 1.</p>
 <p>So there are 6 choices for the third open spot.</p>
 <p>Thus, there are <span class="math notranslate nohighlight">\( 10 \cdot 8 \cdot 6 \)</span> ways to pick the three other members of Team 1.</p>
 <p>However, we needed to consider that these “ways to pick” are counting every order in which the participants can be picked - this is a permutation.</p>
 <p>We need to account for this by making it a combination - dividing by the number of permutations that result in the same three participants.</p>
-<p>There are <span class="math notranslate nohighlight">\(3!\)</span> ways of ordering the same three participants, so the number of different possible combinations of A1’s Team 1 teammates is given by</p>
+<p>There are <span class="math notranslate nohighlight">\(3!\)</span> ways of ordering the same three participants, so the number of different possible combinations of Dave’s Team 1 teammates is given by</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{10 \cdot 8 \cdot 6}{3!} = 80
@@ -380,7 +380,7 @@ document.write(`
 <h3>Filling Team 2<a class="headerlink" href="#filling-team-2" title="Link to this heading">#</a></h3>
 <p>With Team 1 filled, we have three open spots to fill on Team 2.</p>
 <p>Two of his teammates must be from pairs of twins not selected for Team 1, to avoid them being forced into Team 3 together. There are <span class="math notranslate nohighlight">\(2 \cdot 2\)</span> ways of choosing them, as order does not matter.</p>
-<p>The final teammate must then be the twin of one of the three put into Team 1 alongside A1. So the number of ways Team 2 may be filled is</p>
+<p>The final teammate must then be the twin of one of the three put into Team 1 alongside Dave. So the number of ways Team 2 may be filled is</p>
 <div class="math notranslate nohighlight">
 \[
 2 \cdot 2 \cdot 3 = 12
@@ -388,7 +388,7 @@ document.write(`
 </section>
 <section id="filling-team-3">
 <h3>Filling Team 3<a class="headerlink" href="#filling-team-3" title="Link to this heading">#</a></h3>
-<p>With 8 participants selected. only 4 are left to fill team 3.</p>
+<p>With 8 participants selected, only 4 are left to fill Team 3.</p>
 <p>There is <span class="math notranslate nohighlight">\(1\)</span> way to do this.</p>
 </section>
 <section id="answer">
