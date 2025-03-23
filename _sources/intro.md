@@ -1,7 +1,3 @@
-# Welcome to My Jupyter Book
+# Index page
 
-This is an example Jupyter Book created with Markdown and Jupyter Notebooks.
-
-You can edit this content in `intro.md`.
-
-Enjoy!
+Because JupyterBook needs one, and it was my best solution for hosting formatted maths.
