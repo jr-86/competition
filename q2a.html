@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Question 2b &#8212; My Jupyter Book</title>
+    <title>Question 2a &#8212; My Jupyter Book</title>
   
   
   
@@ -177,7 +177,7 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="q1.html">Question 1</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Question 2b</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Question 2a</a></li>
 <li class="toctree-l1"><a class="reference internal" href="q2b.html">Question 2b</a></li>
 <li class="toctree-l1"><a class="reference internal" href="q3.html">Question 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="q4.html">Question 4</a></li>
@@ -320,7 +320,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Question 2b</h1>
+    <h1>Question 2a</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -343,8 +343,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="question-2b">
-<h1>Question 2b<a class="headerlink" href="#question-2b" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="question-2a">
+<h1>Question 2a<a class="headerlink" href="#question-2a" title="Link to this heading">#</a></h1>
 <section id="problem">
 <h2>Problem<a class="headerlink" href="#problem" title="Link to this heading">#</a></h2>
 <p>Oliver teaches a class of six pairs of twins. He wishes to set up teams for a competition, but wants to avoid any pair of twins into the same team. Given this condition:</p>
@@ -352,10 +352,13 @@ document.write(`
 </section>
 <section id="solution">
 <h2>Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<p>There are 6 binary choices assigning players to teams, giving <span class="math notranslate nohighlight">\(2^6\)</span> permutations.</p>
+<p>Each permutation will happen twice, because we don’t distinguish between the teams, so we need to divide this by <span class="math notranslate nohighlight">\(2\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{10 \cdot 8 \cdot 6}{3!} = 80
+\frac{2^6}{2} = 2^5 = 32
 \]</div>
+<p>The answer is <code class="docutils literal notranslate"><span class="pre">32</span></code>.</p>
 </section>
 </section>
 

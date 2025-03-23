@@ -1,4 +1,4 @@
-# Question 2b
+# Question 2a
 
 ## Problem
 
@@ -8,6 +8,12 @@ A. In how many ways can he split them into two teams of six?
 
 ## Solution
 
+There are 6 binary choices assigning players to teams, giving $2^6$ permutations.
+
+Each permutation will happen twice, because we don't distinguish between the teams, so we need to divide this by $2$.
+
 $$
-\frac{10 \cdot 8 \cdot 6}{3!} = 80
+\frac{2^6}{2} = 2^5 = 32
 $$
+
+The answer is `32`.
