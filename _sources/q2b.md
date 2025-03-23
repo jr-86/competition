@@ -37,3 +37,27 @@ There are $3!$ ways of ordering the same three participants, so the number of di
 $$
 \frac{10 \cdot 8 \cdot 6}{3!} = 80
 $$
+
+### Filling Team 2
+
+With Team 1 filled, we have three open spots to fill on Team 2.
+
+Two of his teammates must be from pairs of twins not selected for Team 1, to avoid them being forced into Team 3 together. There are $2 \cdot 2$ ways of choosing them, as order does not matter.
+
+The final teammate must then be the twin of one of the three put into Team 1 alongside A1. So the number of ways Team 2 may be filled is
+
+$$
+2 \cdot 2 \cdot 3 = 12
+$$
+
+### Filling Team 3
+
+With 8 participants selected. only 4 are left to fill team 3.
+
+There is $1$ way to do this.
+
+### Answer
+
+Thus, the number of ways in which the three teams can be arranged is given by $ 80 \cdot 12\cdot 1 $.
+
+The answer is `960`.
