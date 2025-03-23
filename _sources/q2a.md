@@ -8,3 +8,6 @@ A. In how many ways can he split them into two teams of six?
 
 ## Solution
 
+$$
+\frac{10 \cdot 8 \cdot 6}{3!} = 80
+$$
