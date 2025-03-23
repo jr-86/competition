@@ -305,7 +305,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -321,6 +323,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem">Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -332,6 +343,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="question-1">
 <h1>Question 1<a class="headerlink" href="#question-1" title="Link to this heading">#</a></h1>
+<section id="problem">
+<h2>Problem<a class="headerlink" href="#problem" title="Link to this heading">#</a></h2>
+<p>Estimate the number of cups of tea that are drunk in a typical day by the entire Civil Service. Explain your reasoning and assumptions.</p>
+</section>
+<section id="solution">
+<h2>Solution<a class="headerlink" href="#solution" title="Link to this heading">#</a></h2>
+<p>My first assumption is that “the entire Civil service” refers to all Civil servants, regardless of whether or not they are working that day.</p>
+<p>According to the ONS, the number of Civil Servants (by headcount, not FTE) was 542,840 at 31 March 2024. We will assume this number has remained constant.</p>
+<p>According to the ONS again, there were 59,110,688 people aged 12 or over in the United Kingdom in mid-2023. We will assume this number has remained constant, though it has presumably risen slightly in line with population projections.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -388,6 +409,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem">Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solution">Solution</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
