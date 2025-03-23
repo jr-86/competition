@@ -20,9 +20,9 @@ Let's call the other team Team 3.
 
 Dave is already on Team 1, so we have three open spots on Team 1 and 5 pairs of twins to choose from.
 
-The first spot may be filled by any of the 10. This takes one member, and excludes their twin from joining Team 1.
+The first spot may be filled by any of the 10. This takes one participant, and excludes their twin from joining Team 1.
 
-Thus, there are 8 choices for the second open spot. Again, this takes a member, and excludes their twin from joining Team 1.
+Thus, there are 8 choices for the second open spot. Again, this takes a participant, and excludes their twin from joining Team 1.
 
 So there are 6 choices for the third open spot.
 
